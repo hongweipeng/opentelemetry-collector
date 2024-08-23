@@ -4,6 +4,7 @@
 package ptrace // import "go.opentelemetry.io/collector/pdata/ptrace"
 
 import (
+	"fmt"
 	"go.opentelemetry.io/collector/pdata/internal"
 	otlpcollectortrace "go.opentelemetry.io/collector/pdata/internal/data/protogen/collector/trace/v1"
 )
@@ -27,6 +28,7 @@ func (ms Traces) getState() *internal.State {
 
 // NewTraces creates a new Traces struct.
 func NewTraces() Traces {
+	fmt.Println("you create NewTraces")
 	return newTraces(&otlpcollectortrace.ExportTraceServiceRequest{})
 }
 
